@@ -1,0 +1,495 @@
+
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DESTROYER_QUANTUM V27.1 — Audit Report</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+:root{--bg:#0d1117;--card:#161b22;--border:#30363d;--text:#c9d1d9;--muted:#8b949e;--accent:#58a6ff;--green:#3fb950;--red:#f85149;--yellow:#d29922;--purple:#a371f7}
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;padding:2rem;max-width:1100px;margin:auto}
+.header{border-bottom:1px solid var(--border);padding-bottom:1.5rem;margin-bottom:2rem}
+.header h1{font-size:1.8rem;color:var(--accent);margin-bottom:.5rem}
+.badge{display:inline-block;padding:.2rem .6rem;border-radius:99px;font-size:.72rem;font-weight:600;background:var(--card);border:1px solid var(--border);margin-right:.5rem}
+.badge.risk{border-color:var(--red);color:var(--red)}.badge.info{border-color:var(--accent);color:var(--accent)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.25rem;margin-bottom:2rem}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.25rem}
+.card h3{font-size:.78rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-bottom:.6rem}
+.card .value{font-size:1.5rem;font-weight:700}.card .sub{font-size:.78rem;color:var(--muted);margin-top:.25rem}
+.positive{color:var(--green)}.negative{color:var(--red)}.info{color:var(--accent)}
+.section{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.75rem;margin-bottom:2rem}
+.section h2{font-size:1.15rem;border-bottom:1px solid var(--border);padding-bottom:.6rem;margin-bottom:1.25rem;color:var(--accent)}
+.section h3{font-size:1rem;margin:1.25rem 0 .75rem;color:var(--text)}
+table{width:100%;border-collapse:collapse;font-size:.82rem}
+th,td{text-align:left;padding:.5rem .75rem;border-bottom:1px solid var(--border)}
+th{color:var(--muted);font-weight:600;text-transform:uppercase;font-size:.68rem;letter-spacing:.04em}
+tr:hover{background:rgba(88,166,255,.04)}
+.cat-group{margin-bottom:1.25rem}
+.cat-title{font-size:.9rem;font-weight:600;color:var(--purple);margin-bottom:.4rem;padding-bottom:.2rem;border-bottom:1px dashed var(--border)}
+.param-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:.35rem}
+.param-item{font-family:'SF Mono','Consolas',monospace;font-size:.72rem;padding:.25rem .45rem;background:rgba(0,0,0,.2);border-radius:4px}
+.param-key{color:var(--accent)}.param-val{color:var(--green)}
+.warning{border-left:3px solid var(--yellow);background:rgba(210,153,34,.08);padding:.85rem;border-radius:0 6px 6px 0;margin:.4rem 0}
+.danger{border-left-color:var(--red);background:rgba(248,81,73,.08)}
+.chart-container{position:relative;height:300px;margin-top:.75rem}
+.footer-note{font-size:.78rem;color:var(--muted);margin-top:2rem;padding:1rem;background:rgba(0,0,0,.2);border-radius:8px}
+code{font-family:'SF Mono','Consolas',monospace;background:rgba(0,0,0,.25);padding:.12rem .3rem;border-radius:3px;font-size:.85em}
+</style>
+</head><body>
+<div class="header">
+  <h1>DESTROYER_QUANTUM V27.1 — Clinical Audit Report</h1>
+  <div class="subtitle">
+    <span class="badge info">MT4 Build 1470</span>
+    <span class="badge info">EURUSD H4</span>
+    <span class="badge info">2020.01.02 — 2026.04.27</span>
+    <span class="badge">90.00% modeling</span>
+    <span class="badge risk">Max DD 39.57%</span>
+  </div>
+</div>
+
+<!-- KPI Grid -->
+<div class="grid">
+  <div class="card"><h3>Net Profit</h3><div class="value positive">$32,192.26</div><div class="sub">+321.9% on $10,000</div></div>
+  <div class="card"><h3>Profit Factor</h3><div class="value info">1.44</div><div class="sub">Expected: $67.77</div></div>
+  <div class="card"><h3>Max Drawdown</h3><div class="value negative">$14,945.39 (39.57%)</div></div>
+  <div class="card"><h3>Total Trades</h3><div class="value">475</div><div class="sub">334 (70.32%)</div></div>
+  <div class="card"><h3>Realized P&L</h3><div class="value negative">$6,777.06</div><div class="sub">159 closed / 316 open</div></div>
+  <div class="card"><h3>Floating Exposure</h3><div class="value negative">$25,415.20</div><div class="sub">Unrealized at test end</div></div>
+</div>
+
+<!-- Equity -->
+<div class="section"><h2>📈 Equity Curve</h2><div class="chart-container"><canvas id="eq"></canvas></div></div>
+
+<!-- Stats -->
+<div class="section"><h2>Trade Statistics</h2><div class="grid">
+  <div><h3>Performance</h3><table>
+    <tr><th>Metric</th><th>Value</th></tr>
+    <tr><td>Gross Profit</td><td class="positive">$104,827.21</td></tr>
+    <tr><td>Gross Loss</td><td class="negative">-$72,634.95</td></tr>
+    <tr><td>Absolute DD</td><td>$1,020.77</td></tr>
+    <tr><td>Relative DD</td><td>39.57%</td></tr>
+  </table></div>
+  <div><h3>Distribution</h3><table>
+    <tr><th>Metric</th><th>Value</th></tr>
+    <tr><td>Profit Trades</td><td>334 (70.32%)</td></tr>
+    <tr><td>Loss Trades</td><td>141 (29.68%)</td></tr>
+    <tr><td>Short Win</td><td>69.57%</td></tr>
+    <tr><td>Long Win</td><td>71.17%</td></tr>
+  </table></div>
+  <div><h3>P&L Per Trade</h3><table>
+    <tr><th>Metric</th><th>Value</th></tr>
+    <tr><td>Largest Win</td><td class="positive">$4,429.92</td></tr>
+    <tr><td>Largest Loss</td><td class="negative">-$3,156.41</td></tr>
+    <tr><td>Avg Winner</td><td>182.82</td></tr>
+    <tr><td>Avg Loser</td><td>-201.51</td></tr>
+  </table></div>
+  <div><h3>Streaks</h3><table>
+    <tr><th>Metric</th><th>Value</th></tr>
+    <tr><td>Max Win Streak</td><td>16 ($7,263.49)</td></tr>
+    <tr><td>Max Loss Streak</td><td>10 (-$3,855.19)</td></tr>
+    <tr><td>Mismatched Charts</td><td class="negative">14 errors</td></tr>
+  </table></div>
+</div></div>
+
+<!-- Parameters -->
+<div class="section"><h2>Risk & Model Parameters</h2><div class="grid">
+  <div><h3>Queen Bee</h3><table>
+    <tr><td>Base Risk %</td><td><code>0.5%</code></td></tr>
+    <tr><td>Defensive DD %</td><td><code>15%</code></td></tr>
+    <tr><td>DD Risk Mult</td><td><code>0.3</code></td></tr>
+    <tr><td>Max Open Trades</td><td><code>12</code></td></tr>
+    <tr><td>Max Total Risk %</td><td><code>5%</code></td></tr>
+    <tr><td>Compounding</td><td><code>true</code></td></tr>
+  </table></div>
+  <div><h3>Aegis Dynamic</h3><table>
+    <tr><td>Max Spread</td><td><code>55 pips</code></td></tr>
+    <tr><td>Slippage</td><td><code>3 pts</code></td></tr>
+    <tr><td>ATR Multiplier</td><td><code>2.5</code></td></tr>
+    <tr><td>Chandelier</td><td><code>P22×3</code></td></tr>
+    <tr><td>EMA Trail</td><td><code>10</code></td></tr>
+  </table></div>
+</div>
+
+<h3 style="margin-top:1.5rem">Model Allocation</h3>
+
+  <div class="cat-group"><div class="cat-title"> DESTROYER QUANTUM V18.0 INSTITUTIONAL CANDIDATE </div>
+    <div class="param-grid">
+      
+    </div>
+  </div>
+
+  <div class="cat-group"><div class="cat-title"> SYSTEM: MAGIC NUMBERS </div>
+    <div class="param-grid">
+      
+        <div class="param-item"><span class="param-key">InpMagic_MeanReversion</span> = <span class="param-val">777001</span></div>
+      
+        <div class="param-item"><span class="param-key">InpTradeComment</span> = <span class="param-val">DQ_V17.10_PH4</span></div>
+      
+    </div>
+  </div>
+
+  <div class="cat-group"><div class="cat-title"> CERBERUS MODEL A: MEAN-REVERSION (ADAPTIVE) </div>
+    <div class="param-grid">
+      
+        <div class="param-item"><span class="param-key">InpMeanReversion_Enabled</span> = <span class="param-val">true</span></div>
+      
+        <div class="param-item"><span class="param-key">InpMR_BB_Period</span> = <span class="param-val">15</span></div>
+      
+        <div class="param-item"><span class="param-key">InpMR_BB_Dev</span> = <span class="param-val">1.9</span></div>
+      
+        <div class="param-item"><span class="param-key">InpMR_RSI_Period</span> = <span class="param-val">10</span></div>
+      
+        <div class="param-item"><span class="param-key">InpMR_RSI_OB</span> = <span class="param-val">68</span></div>
+      
+        <div class="param-item"><span class="param-key">InpMR_RSI_OS</span> = <span class="param-val">32</span></div>
+      
+        <div class="param-item"><span class="param-key">InpMR_CCI_Period</span> = <span class="param-val">20</span></div>
+      
+        <div class="param-item"><span class="param-key">InpMR_ADX_Threshold</span> = <span class="param-val">20</span></div>
+      
+    </div>
+  </div>
+
+  <div class="cat-group"><div class="cat-title"> CHRONOS MODEL M: MARKET MICROSTRUCTURE (M15 HFT) </div>
+    <div class="param-grid">
+      
+        <div class="param-item"><span class="param-key">InpChronos_Enabled</span> = <span class="param-val">true</span></div>
+      
+        <div class="param-item"><span class="param-key">InpChronos_ScalpSL_Pips</span> = <span class="param-val">25</span></div>
+      
+        <div class="param-item"><span class="param-key">InpChronos_ScalpTP_Pips</span> = <span class="param-val">35</span></div>
+      
+        <div class="param-item"><span class="param-key">InpChronos_LotSizeMultiplier</span> = <span class="param-val">0.5</span></div>
+      
+        <div class="param-item"><span class="param-key">InpChronos_MagicNumber</span> = <span class="param-val">999001</span></div>
+      
+    </div>
+  </div>
+
+  <div class="cat-group"><div class="cat-title"> BEEHIVE QUEEN PROTOCOL </div>
+    <div class="param-grid">
+      
+        <div class="param-item"><span class="param-key">InpEnableCompounding</span> = <span class="param-val">true</span></div>
+      
+        <div class="param-item"><span class="param-key">InpBase_Risk_Percent</span> = <span class="param-val">0.5</span></div>
+      
+        <div class="param-item"><span class="param-key">InpBase_Risk_Percent_H1</span> = <span class="param-val">0.25</span></div>
+      
+        <div class="param-item"><span class="param-key">InpDefensiveDD_Percent</span> = <span class="param-val">15</span></div>
+      
+        <div class="param-item"><span class="param-key">InpDrawdown_Risk_Mult</span> = <span class="param-val">0.3</span></div>
+      
+        <div class="param-item"><span class="param-key">InpMaxOpenTrades</span> = <span class="param-val">12</span></div>
+      
+        <div class="param-item"><span class="param-key">InpEnable_ReaperConditionFilter</span> = <span class="param-val">false</span></div>
+      
+        <div class="param-item"><span class="param-key">InpMR_Allow_Defensive</span> = <span class="param-val">true</span></div>
+      
+        <div class="param-item"><span class="param-key">InpMaxTotalRisk_Percent</span> = <span class="param-val">5</span></div>
+      
+        <div class="param-item"><span class="param-key">InpEnableAdaptiveSelection</span> = <span class="param-val">false</span></div>
+      
+        <div class="param-item"><span class="param-key">InpMinTradesForDecision</span> = <span class="param-val">20</span></div>
+      
+    </div>
+  </div>
+
+  <div class="cat-group"><div class="cat-title"> COOLDOWN SYSTEM </div>
+    <div class="param-grid">
+      
+        <div class="param-item"><span class="param-key">InpEnableCooldownSystem</span> = <span class="param-val">false</span></div>
+      
+        <div class="param-item"><span class="param-key">InpDisable_VAR_Limiter</span> = <span class="param-val">false</span></div>
+      
+        <div class="param-item"><span class="param-key">InpDisable_AlphaSentinel</span> = <span class="param-val">false</span></div>
+      
+        <div class="param-item"><span class="param-key">InpMinProfitFactor</span> = <span class="param-val">1.1</span></div>
+      
+    </div>
+  </div>
+
+  <div class="cat-group"><div class="cat-title"> AEGIS DYNAMIC RISK PROTOCOL (ENHANCED) </div>
+    <div class="param-grid">
+      
+        <div class="param-item"><span class="param-key">InpMax_Spread_Pips</span> = <span class="param-val">55</span></div>
+      
+        <div class="param-item"><span class="param-key">InpSlippage</span> = <span class="param-val">3</span></div>
+      
+        <div class="param-item"><span class="param-key">InpTQS_High_Conviction</span> = <span class="param-val">1.5</span></div>
+      
+        <div class="param-item"><span class="param-key">InpTQS_Medium_Conviction</span> = <span class="param-val">1</span></div>
+      
+        <div class="param-item"><span class="param-key">InpTQS_Low_Conviction</span> = <span class="param-val">0.5</span></div>
+      
+        <div class="param-item"><span class="param-key">InpMinTQSForEntry</span> = <span class="param-val">0.2</span></div>
+      
+        <div class="param-item"><span class="param-key">InpATR_Multiplier</span> = <span class="param-val">2.5</span></div>
+      
+        <div class="param-item"><span class="param-key">InpPSAR_Step</span> = <span class="param-val">0.02</span></div>
+      
+        <div class="param-item"><span class="param-key">InpPSAR_Max</span> = <span class="param-val">0.2</span></div>
+      
+        <div class="param-item"><span class="param-key">InpChandelier_Period</span> = <span class="param-val">22</span></div>
+      
+        <div class="param-item"><span class="param-key">InpChandelier_Multiplier</span> = <span class="param-val">3</span></div>
+      
+        <div class="param-item"><span class="param-key">InpEMA_Trail_Period</span> = <span class="param-val">10</span></div>
+      
+    </div>
+  </div>
+
+  <div class="cat-group"><div class="cat-title"> MARKET CONDITION FILTERS </div>
+    <div class="param-grid">
+      
+        <div class="param-item"><span class="param-key">InpEnableMarketFilters</span> = <span class="param-val">true</span></div>
+      
+    </div>
+  </div>
+
+  <div class="cat-group"><div class="cat-title"> TIME FILTERS </div>
+    <div class="param-grid">
+      
+        <div class="param-item"><span class="param-key">InpEnableTimeFilter</span> = <span class="param-val">false</span></div>
+      
+        <div class="param-item"><span class="param-key">InpTradeMonday</span> = <span class="param-val">true</span></div>
+      
+        <div class="param-item"><span class="param-key">InpTradeTuesday</span> = <span class="param-val">true</span></div>
+      
+        <div class="param-item"><span class="param-key">InpTradeWednesday</span> = <span class="param-val">true</span></div>
+      
+        <div class="param-item"><span class="param-key">InpTradeThursday</span> = <span class="param-val">true</span></div>
+      
+        <div class="param-item"><span class="param-key">InpTradeFriday</span> = <span class="param-val">true</span></div>
+      
+        <div class="param-item"><span class="param-key">InpTradeSaturday</span> = <span class="param-val">false</span></div>
+      
+        <div class="param-item"><span class="param-key">InpTradeSunday</span> = <span class="param-val">false</span></div>
+      
+        <div class="param-item"><span class="param-key">InpTradingStartHour</span> = <span class="param-val">8</span></div>
+      
+        <div class="param-item"><span class="param-key">InpTradingEndHour</span> = <span class="param-val">18</span></div>
+      
+    </div>
+  </div>
+
+  <div class="cat-group"><div class="cat-title"> VISUALS & DASHBOARD </div>
+    <div class="param-grid">
+      
+        <div class="param-item"><span class="param-key">InpShow_Dashboard</span> = <span class="param-val">true</span></div>
+      
+        <div class="param-item"><span class="param-key">InpDashboard_BG_Color</span> = <span class="param-val">28,28,38</span></div>
+      
+        <div class="param-item"><span class="param-key">InpDashboard_Text_Color</span> = <span class="param-val">210,210,220</span></div>
+      
+        <div class="param-item"><span class="param-key">InpColor_Positive</span> = <span class="param-val">LimeGreen</span></div>
+      
+        <div class="param-item"><span class="param-key">InpColor_Negative</span> = <span class="param-val">255,80,100</span></div>
+      
+        <div class="param-item"><span class="param-key">InpColor_Neutral</span> = <span class="param-val">Goldenrod</span></div>
+      
+    </div>
+  </div>
+
+  <div class="cat-group"><div class="cat-title"> BROKER REQUIREMENTS </div>
+    <div class="param-grid">
+      
+        <div class="param-item"><span class="param-key">InpMinStopDistancePoints</span> = <span class="param-val">30</span></div>
+      
+    </div>
+  </div>
+
+  <div class="cat-group"><div class="cat-title"> CERBERUS MODEL T: THE TITAN (MTF MOMENTUM) </div>
+    <div class="param-grid">
+      
+        <div class="param-item"><span class="param-key">InpTitan_Enabled</span> = <span class="param-val">true</span></div>
+      
+        <div class="param-item"><span class="param-key">InpTitan_MagicNumber</span> = <span class="param-val">777008</span></div>
+      
+        <div class="param-item"><span class="param-key">InpTitan_D1_EMA</span> = <span class="param-val">50</span></div>
+      
+        <div class="param-item"><span class="param-key">InpTitan_H4_EMA</span> = <span class="param-val">34</span></div>
+      
+    </div>
+  </div>
+
+  <div class="cat-group"><div class="cat-title"> HUNTSMAN CAPITAL PRESERVATION </div>
+    <div class="param-grid">
+      
+        <div class="param-item"><span class="param-key">InpHuntsman_Enabled</span> = <span class="param-val">true</span></div>
+      
+        <div class="param-item"><span class="param-key">InpHuntsman_PrimingBars</span> = <span class="param-val">50</span></div>
+      
+        <div class="param-item"><span class="param-key">InpHuntsman_Risk_Scale</span> = <span class="param-val">0.5</span></div>
+      
+    </div>
+  </div>
+
+  <div class="cat-group"><div class="cat-title"> CERBERUS MODEL W: THE WARDEN (VOLATILITY SQUEEZE) </div>
+    <div class="param-grid">
+      
+        <div class="param-item"><span class="param-key">InpWarden_Enabled</span> = <span class="param-val">true</span></div>
+      
+        <div class="param-item"><span class="param-key">InpWarden_MagicNumber</span> = <span class="param-val">777009</span></div>
+      
+        <div class="param-item"><span class="param-key">InpWarden_BB_Period</span> = <span class="param-val">20</span></div>
+      
+        <div class="param-item"><span class="param-key">InpWarden_BB_Dev</span> = <span class="param-val">2</span></div>
+      
+        <div class="param-item"><span class="param-key">InpWarden_KC_Period</span> = <span class="param-val">20</span></div>
+      
+        <div class="param-item"><span class="param-key">InpWarden_KC_ATR_Mult</span> = <span class="param-val">1.5</span></div>
+      
+        <div class="param-item"><span class="param-key">InpWarden_Momentum_MA</span> = <span class="param-val">50</span></div>
+      
+    </div>
+  </div>
+
+  <div class="cat-group"><div class="cat-title"> CERBERUS MODEL R: THE REAPER (GRID/MARTINGALE) </div>
+    <div class="param-grid">
+      
+        <div class="param-item"><span class="param-key">InpReaper_Enabled</span> = <span class="param-val">true</span></div>
+      
+        <div class="param-item"><span class="param-key">InpReaper_BuyMagicNumber</span> = <span class="param-val">888001</span></div>
+      
+        <div class="param-item"><span class="param-key">InpReaper_SellMagicNumber</span> = <span class="param-val">888002</span></div>
+      
+        <div class="param-item"><span class="param-key">InpReaper_InitialLot</span> = <span class="param-val">0.01</span></div>
+      
+        <div class="param-item"><span class="param-key">InpReaper_LotMultiplier</span> = <span class="param-val">1.3</span></div>
+      
+        <div class="param-item"><span class="param-key">InpReaper_MaxLevels</span> = <span class="param-val">8</span></div>
+      
+        <div class="param-item"><span class="param-key">InpReaper_PipStep</span> = <span class="param-val">25</span></div>
+      
+        <div class="param-item"><span class="param-key">InpReaper_BasketTP</span> = <span class="param-val">50</span></div>
+      
+        <div class="param-item"><span class="param-key">InpReaper_Timeframe</span> = <span class="param-val">240</span></div>
+      
+        <div class="param-item"><span class="param-key">InpReaper_Header_Patch</span> = <span class="param-val">====== V27.1: REAPER INTELLIGENT GRID ======</span></div>
+      
+        <div class="param-item"><span class="param-key">InpReaper_HardcapLevels</span> = <span class="param-val">8</span></div>
+      
+        <div class="param-item"><span class="param-key">InpReaper_RegimeADX</span> = <span class="param-val">30</span></div>
+      
+        <div class="param-item"><span class="param-key">InpReaper_CooldownBars</span> = <span class="param-val">2</span></div>
+      
+        <div class="param-item"><span class="param-key">InpReaper_ATR_GridMult</span> = <span class="param-val">0.5</span></div>
+      
+        <div class="param-item"><span class="param-key">InpReaper_Header_Phoenix</span> = <span class="param-val">====== REAPER: PHOENIX BASKET TP ======</span></div>
+      
+        <div class="param-item"><span class="param-key">InpReaper_BasketTP_Money</span> = <span class="param-val">400</span></div>
+      
+        <div class="param-item"><span class="param-key">InpReaper_Header_Chimera</span> = <span class="param-val">====== REAPER: CHIMERA TRAILING DEFENSE ======</span></div>
+      
+        <div class="param-item"><span class="param-key">InpReaper_EnableTrail</span> = <span class="param-val">true</span></div>
+      
+        <div class="param-item"><span class="param-key">InpReaper_TrailStart_Money</span> = <span class="param-val">150</span></div>
+      
+        <div class="param-item"><span class="param-key">InpReaper_TrailStop_Pips</span> = <span class="param-val">300</span></div>
+      
+    </div>
+  </div>
+
+  <div class="cat-group"><div class="cat-title"> REAPER: ALPHA SENTINEL ENTRY FILTER </div>
+    <div class="param-grid">
+      
+        <div class="param-item"><span class="param-key">InpReaper_EnableSentinel</span> = <span class="param-val">true</span></div>
+      
+        <div class="param-item"><span class="param-key">InpSentinel_MaxADX</span> = <span class="param-val">25</span></div>
+      
+        <div class="param-item"><span class="param-key">InpSentinel_MTF_MAPeriod</span> = <span class="param-val">21</span></div>
+      
+        <div class="param-item"><span class="param-key">InpSentinel_MaxATR_Mult</span> = <span class="param-val">1.3</span></div>
+      
+    </div>
+  </div>
+
+  <div class="cat-group"><div class="cat-title"> REAPER: ELITE REVERSAL FILTER (CHIMERA) </div>
+    <div class="param-grid">
+      
+        <div class="param-item"><span class="param-key">InpReaper_EnableEliteFilter</span> = <span class="param-val">true</span></div>
+      
+    </div>
+  </div>
+
+  <div class="cat-group"><div class="cat-title"> CERBERUS MODEL S: SILICON-X (TRUE NORTH) </div>
+    <div class="param-grid">
+      
+        <div class="param-item"><span class="param-key">InpSiliconX_Enabled</span> = <span class="param-val">true</span></div>
+      
+        <div class="param-item"><span class="param-key">InpSX_InitialLot</span> = <span class="param-val">0.01</span></div>
+      
+    </div>
+  </div>
+
+</div>
+
+<!-- Warnings -->
+<div class="section"><h2>Configuration Warnings</h2>
+
+  <div class="warning">Cooldown System DISABLED — allows rapid entries during volatility</div>
+
+  <div class="warning">Adaptive Selection OFF — static model allocation</div>
+
+  <div class="warning">Reaper LotMultiplier=1.3 — exponential grid risk</div>
+
+  <div class="warning">Reaper HardcapLevels=8 — deep grid exposure</div>
+
+  <div class="warning">Reaper Condition Filter disabled</div>
+
+</div>
+
+<!-- Recs -->
+<div class="section"><h2>Recommendations</h2>
+<h3>🔴 P0 — Immediate</h3><ul>
+  <li><strong>Circuit Breaker</strong> — DefensiveDD_Percent=15% exceeded (actual 39.57%). Validate AEGIS trigger.</li>
+  <li><strong>Reaper Grid</strong> — LotMultiplier=1.3, HardcapLevels=8. Monte-Carlo with slippage.</li>
+  <li><strong>Indicator Audit</strong> — 14 mismatched-chart errors. Scan //include for repainting.</li>
+  <li><strong>Gap Risk</strong> — 316 open positions; simulate 50-pip weekend gap.</li>
+</ul>
+<h3>🟡 P1 — Near Term</h3><ul>
+  <li><strong>Time Filter</strong> — Enable InpEnableTimeFilter or session isolation.</li>
+  <li><strong>Profit Factor</strong> — 1.44 marginal; tighten RSI/CCI thresholds.</li>
+  <li><strong>Walk-Forward</strong> — 2020–2022 train / 2022–2026 test for regime persistence.</li>
+</ul>
+<h3>🔵 Architectural</h3><ul>
+  <li>Per-model P&L attribution tracking</li>
+  <li>Dynamic ATR-based stops vs hard-coded BB_Dev=1.9</li>
+  <li>Position-age risk decay curve</li>
+</ul>
+</div>
+
+<!-- Meta -->
+<div class="section"><h2>Test Environment</h2><div class="grid">
+  <div class="card"><h3>MT4</h3><table>
+    <tr><td>Build</td><td><code>1470</code></td></tr>
+    <tr><td>Broker</td><td>XMGlobal-Real 26</td></tr>
+    <tr><td>Symbol</td><td>EURUSD</td></tr>
+    <tr><td>Period</td><td>2020.01.02 — 2026.04.27</td></tr>
+    <tr><td>Spread</td><td>21 pips</td></tr>
+  </table></div>
+  <div class="card"><h3>Data Quality</h3><table>
+    <tr><td>Bars</td><td>10,526</td></tr>
+    <tr><td>Ticks</td><td>92,870,604</td></tr>
+    <tr><td>Modeling</td><td>90.00%</td></tr>
+    <tr><td>Mismatched</td><td class="negative">14 errors</td></tr>
+  </table></div>
+</div></div>
+
+<div class="footer-note">
+  <strong>DISCLAIMER:</strong> Backtest results only. Past performance ≠ future results. Open position exposure (316 unclosed trades) represents material gap/margin risk.
+</div>
+
+<div style="text-align:center;color:var(--muted);margin-top:2rem;font-size:.78rem">
+  Audit by <strong>HERMES // MAX</strong> — Lead Quantitative Architect, DESTROYER_QUANTUM
+</div>
+
+<script>
+const ctx = document.getElementById('eq').getContext('2d');
+const data = {"dates": ["2020-01-02", "2020.01.27", "2020.01.31", "2020.02.03", "2020.02.18", "2020.02.24", "2020.02.27", "2020.02.27", "2020.03.02", "2020.09.01", "2020.09.07", "2020.09.14", "2020.09.21", "2020.09.28", "2020.10.05", "2020.10.12", "2020.10.19", "2020.10.26", "2020.11.09", "2021.04.20", "2021.04.30", "2021.04.30", "2021.04.30", "2021.04.30", "2021.06.15", "2021.06.16", "2021.07.01", "2021.07.05", "2021.07.12", "2021.07.14", "2021.08.02", "2021.08.09", "2021.08.23", "2021.09.13", "2021.09.13", "2021.09.20", "2021.09.27", "2021.10.11", "2021.10.25", "2021.10.28", "2021.11.10", "2021.11.10", "2021.11.11", "2021.11.11", "2021.11.15", "2021.11.15", "2021.11.15", "2021.11.16", "2021.11.16", "2021.11.17", "2021.11.17", "2022.01.12", "2022.01.12", "2022.01.12", "2022.01.17", "2022.01.24", "2022.01.24", "2022.01.27", "2022.01.28", "2022.01.31", "2022.02.07", "2022.02.14", "2022.02.21", "2022.02.24", "2022.03.02", "2022.03.02", "2022.03.04", "2022.03.04", "2022.03.04", "2022.03.04", "2022.03.07", "2022.03.07", "2022.03.07", "2022.03.09", "2022.03.09", "2022.03.09", "2022.03.31", "2022.04.04", "2022.04.18", "2022.04.25", "2022.04.25", "2022.04.25", "2022.04.25", "2022.04.26", "2022.04.26", "2022.04.27", "2022.04.27", "2022.04.27", "2022.04.27", "2022.04.28", "2022.04.28", "2022.05.12", "2022.05.12", "2022.05.12", "2022.05.12", "2022.05.13", "2022.05.16", "2022.06.13", "2022.06.20", "2022.06.27", "2022.07.04", "2022.07.05", "2022.07.05", "2022.07.05", "2022.07.05", "2022.07.06", "2022.07.06", "2022.07.06", "2022.07.06", "2022.07.08", "2022.07.08", "2022.07.08", "2022.07.08", "2022.07.11", "2022.07.11", "2022.07.12", "2022.07.12", "2022.07.14", "2022.07.18", "2022.08.01", "2022.08.08", "2022.08.10", "2022.08.22", "2022.08.23", "2022.08.23", "2022.09.05", "2022.09.06", "2022.09.06", "2022.09.19", "2022.09.21", "2022.09.21", "2022.09.21", "2022.09.23", "2022.09.23", "2022.09.26", "2022.09.26", "2022.09.26", "2022.09.26", "2022.09.26", "2022.10.03", "2022.10.10", "2022.10.17", "2022.10.26", "2022.10.31", "2022.11.14", "2022.11.28", "2022.12.05", "2022.12.12", "2023.02.02", "2023.02.06", "2023.02.20", "2023.03.06", "2023.03.20", "2023.03.27", "2023.04.03", "2023.04.10", "2023.04.17", "2023.05.31", "2023.06.01", "2023.06.22"], "equity": [10000, 9895.51, 9906.11, 9811.61, 9921.7, 9693.81, 9703.68, 9731.68, 9485.92, 11408.88, 11522.56, 11694.82, 11687.21, 11819.87, 11675.87, 11277.89, 11337.41, 11161.78, 11379.52, 11728.26, 11723.39, 11722.87, 11733.53, 11767.33, 11343.4, 12598.65, 12615.38, 12742.64, 12850.76, 12863.88, 13028.68, 13109.8, 13295.81, 13363.33, 12763.37, 14079.46, 14176.7, 14330.57, 13508.46, 12805.06, 12805.62, 12805.62, 12825.05, 12864.98, 12876.44, 12883.64, 12879.14, 12879.2, 12956.31, 12956.31, 12956.31, 12833.52, 12692.73, 12658.73, 12536.33, 12612.38, 12027.58, 12019.74, 12058.05, 12150.96, 12237.88, 12388.03, 12511.61, 14183.02, 14180.62, 14182.78, 14178.55, 14213.76, 14233.56, 14245.77, 14245.77, 14265.57, 14279.49, 14211.66, 14212.96, 14247.56, 14792.98, 14998.98, 15222.61, 15252.17, 15263.73, 15309.03, 15309.15, 15306.93, 15320.05, 15358.89, 15361.95, 15355.02, 15370.74, 15370.99, 15372.88, 15363.53, 15364.69, 15373.02, 15360.66, 15360.74, 15370.55, 15066.89, 15526.67, 15696.77, 15951.57, 15946.67, 16051.07, 16036.51, 16036.51, 16011.73, 16005.73, 15990.89, 16063.34, 16109.97, 16112.76, 16159.24, 16162.12, 15477.51, 15473.51, 15473.61, 15496.85, 15496.85, 16447.25, 16957.1, 16584.22, 16522.22, 16239.74, 16290.99, 16296.75, 14812.17, 14812.29, 14816.64, 15053.8, 15039.4, 15039.4, 15039.4, 15099.72, 15134.52, 15215.73, 15240.75, 15240.75, 15230.04, 15351.24, 16052.04, 16256.64, 16406.04, 16003.93, 15428.18, 14702.72, 15474.0, 15766.11, 15935.11, 16242.55, 16648.34, 16919.0, 17234.0, 17796.86, 18137.14, 17891.92, 17993.56, 17589.52, 17752.32, 16848.06, 16777.06]};
+new Chart(ctx, {
+  type: 'line',
+  data: { labels: data.dates, datasets: [{ label:'Equity ($)', data:data.equity, borderColor:'#58a6ff', backgroundColor:'rgba(88,166,255,0.08)', fill:true, tension:0.1, pointRadius:0 }] },
+  options: { responsive:true, maintainAspectRatio:false, plugins:{legend:{labels:{color:'#c9d1d9'}}}, scales:{ x:{grid:{color:'#30363d'},ticks:{color:'#8b949e',maxTicksLimit:8}}, y:{grid:{color:'#30363d'},ticks:{color:'#8b949e'} } }
+});
+</script>
+</body></html>
