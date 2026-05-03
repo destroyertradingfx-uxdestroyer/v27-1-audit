@@ -1,0 +1,969 @@
+%PDF-1.7
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [ 3 0 R 4 0 R 5 0 R 6 0 R 7 0 R 8 0 R ] /Count 6 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /Resources << /Font << /F1 4 0 R >> >> /MediaBox [0 0 595 842] /Contents 9 0 R >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /Resources << /Font << /F1 4 0 R >> >> /MediaBox [0 0 595 842] /Contents 10 0 R >>
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /Resources << /Font << /F1 4 0 R >> >> /MediaBox [0 0 595 842] /Contents 11 0 R >>
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /Resources << /Font << /F1 4 0 R >> >> /MediaBox [0 0 595 842] /Contents 12 0 R >>
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /Resources << /Font << /F1 4 0 R >> >> /MediaBox [0 0 595 842] /Contents 13 0 R >>
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /Resources << /Font << /F1 4 0 R >> >> /MediaBox [0 0 595 842] /Contents 14 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier >>
+endobj
+9 0 obj
+<< /Length 3704 >>
+stream
+q
+1 0 0 1 36 806 cm
+/F1 8 Tf
+BT
+0 -9.6 Td
+() Tj
+0 -9.6 Td
+(DESTROYER QUANTUM V27.1 STRATEGY AUDIT REPORT) Tj
+0 -9.6 Td
+(=============================================) Tj
+0 -9.6 Td
+() Tj
+0 -9.6 Td
+(Generated: 2026-05-03 15:28:57) Tj
+0 -9.6 Td
+(Source: MT4 Strategy Tester HTML Report — DESTROYER_V27_1_PATCHED) Tj
+0 -9.6 Td
+(Archive: v27 1 patched.zip) Tj
+0 -9.6 Td
+(HTML Size: 679.5 MB) Tj
+0 -9.6 Td
+(Total log entries: 1,065,472) Tj
+0 -9.6 Td
+() Tj
+0 -9.6 Td
+(1. EXECUTIVE SUMMARY) Tj
+0 -9.6 Td
+(====================) Tj
+0 -9.6 Td
+() Tj
+0 -9.6 Td
+(                              ) Tj
+0 -9.6 Td
+(Version                        v27.1 \(Build 1470\)) Tj
+0 -9.6 Td
+(Instrument                     EURUSD) Tj
+0 -9.6 Td
+(Timeframe                      H4) Tj
+0 -9.6 Td
+(Test Period                    2020.01.02 — 2026.04.27) Tj
+0 -9.6 Td
+(Modeling Quality               90.00% \(Every Tick\)) Tj
+0 -9.6 Td
+(Initial Deposit                $10,000.00) Tj
+0 -9.6 Td
+(Spread                         21 pips) Tj
+0 -9.6 Td
+() Tj
+0 -9.6 Td
+(--- PERFORMANCE ---           ) Tj
+0 -9.6 Td
+(Total Net Profit               $32,192.26  \(+321.9%\)) Tj
+0 -9.6 Td
+(Gross Profit                   $104,827.21) Tj
+0 -9.6 Td
+(Gross Loss                     $-72,634.95) Tj
+0 -9.6 Td
+(Profit Factor                  1.44) Tj
+0 -9.6 Td
+(Expected Payoff                $67.77) Tj
+0 -9.6 Td
+() Tj
+0 -9.6 Td
+(--- RISK ---                  ) Tj
+0 -9.6 Td
+(Absolute Drawdown              $1,020.77) Tj
+0 -9.6 Td
+(Maximal Drawdown               14,945.39 \(39.57%\)) Tj
+0 -9.6 Td
+(Relative Drawdown              39.57%) Tj
+0 -9.6 Td
+() Tj
+0 -9.6 Td
+(--- TRADE DISTRIBUTION ---    ) Tj
+0 -9.6 Td
+(Total Orders Placed            475) Tj
+0 -9.6 Td
+(Profit Trades                  334 \(70.32%\)) Tj
+0 -9.6 Td
+(Loss Trades                    141 \(29.68%\)) Tj
+0 -9.6 Td
+(Short Positions                253 \(69.57% win rate\)) Tj
+0 -9.6 Td
+(Long Positions                 222 \(71.17% win rate\)) Tj
+0 -9.6 Td
+() Tj
+0 -9.6 Td
+(--- P&L STATS ---             ) Tj
+0 -9.6 Td
+(Largest Profit Trade           $4,429.92) Tj
+0 -9.6 Td
+(Largest Loss Trade             -3,156.41) Tj
+0 -9.6 Td
+(Average Profit Trade           $313.85) Tj
+0 -9.6 Td
+(Average Loss Trade             -515.14) Tj
+0 -9.6 Td
+(Max Consecutive Wins           16 \($7,263.49\)) Tj
+0 -9.6 Td
+(Max Consecutive Losses         10 \(-$3,855.19\)) Tj
+0 -9.6 Td
+() Tj
+0 -9.6 Td
+(--- REALIZED vs FLOATING ---  ) Tj
+0 -9.6 Td
+(Realized P&L \(closed\)          $6,777.06) Tj
+0 -9.6 Td
+(Closed Trades \(events\)         159) Tj
+0 -9.6 Td
+(Unrealized P&L \(open\)          $25,415.20) Tj
+0 -9.6 Td
+(Open Trades \(unclosed\)         316) Tj
+0 -9.6 Td
+() Tj
+0 -9.6 Td
+(2. PARAMETER AUDIT \(119 SETTINGS\)) Tj
+0 -9.6 Td
+(=================================) Tj
+0 -9.6 Td
+() Tj
+0 -9.6 Td
+() Tj
+0 -9.6 Td
+([ DESTROYER QUANTUM V18.0 INSTITUTIONAL CANDIDATE ]) Tj
+0 -9.6 Td
+() Tj
+0 -9.6 Td
+([ SYSTEM: MAGIC NUMBERS ]) Tj
+0 -9.6 Td
+(  InpMagic_MeanReversion = 777001) Tj
+0 -9.6 Td
+(  InpTradeComment = DQ_V17.10_PH4) Tj
+0 -9.6 Td
+() Tj
+0 -9.6 Td
+([ CERBERUS MODEL A: MEAN-REVERSION \(ADAPTIVE\) ]) Tj
+0 -9.6 Td
+(  InpMeanReversion_Enabled = true) Tj
+0 -9.6 Td
+(  InpMR_BB_Period = 15) Tj
+0 -9.6 Td
+(  InpMR_BB_Dev = 1.9) Tj
+0 -9.6 Td
+(  InpMR_RSI_Period = 10) Tj
+0 -9.6 Td
+(  InpMR_RSI_OB = 68) Tj
+0 -9.6 Td
+(  InpMR_RSI_OS = 32) Tj
+0 -9.6 Td
+(  InpMR_CCI_Period = 20) Tj
+0 -9.6 Td
+(  InpMR_ADX_Threshold = 20) Tj
+0 -9.6 Td
+() Tj
+0 -9.6 Td
+([ CHRONOS MODEL M: MARKET MICROSTRUCTURE \(M15 HFT\) ]) Tj
+0 -9.6 Td
+(  InpChronos_Enabled = true) Tj
+0 -9.6 Td
+(  InpChronos_ScalpSL_Pips = 25) Tj
+0 -9.6 Td
+(  InpChronos_ScalpTP_Pips = 35) Tj
+0 -9.6 Td
+(  InpChronos_LotSizeMultiplier = 0.5) Tj
+ET
+Q
+
+endstream
+endobj
+10 0 obj
+<< /Length 3310 >>
+stream
+q
+1 0 0 1 36 806 cm
+/F1 8 Tf
+BT
+0 -9.6 Td
+(  InpChronos_MagicNumber = 999001) Tj
+0 -9.6 Td
+() Tj
+0 -9.6 Td
+([ BEEHIVE QUEEN PROTOCOL ]) Tj
+0 -9.6 Td
+(  InpEnableCompounding = true) Tj
+0 -9.6 Td
+(  InpBase_Risk_Percent = 0.5) Tj
+0 -9.6 Td
+(  InpBase_Risk_Percent_H1 = 0.25) Tj
+0 -9.6 Td
+(  InpDefensiveDD_Percent = 15) Tj
+0 -9.6 Td
+(  InpDrawdown_Risk_Mult = 0.3) Tj
+0 -9.6 Td
+(  InpMaxOpenTrades = 12) Tj
+0 -9.6 Td
+(  InpEnable_ReaperConditionFilter = false) Tj
+0 -9.6 Td
+(  InpMR_Allow_Defensive = true) Tj
+0 -9.6 Td
+(  InpMaxTotalRisk_Percent = 5) Tj
+0 -9.6 Td
+(  InpEnableAdaptiveSelection = false) Tj
+0 -9.6 Td
+(  InpMinTradesForDecision = 20) Tj
+0 -9.6 Td
+() Tj
+0 -9.6 Td
+([ COOLDOWN SYSTEM ]) Tj
+0 -9.6 Td
+(  InpEnableCooldownSystem = false) Tj
+0 -9.6 Td
+(  InpDisable_VAR_Limiter = false) Tj
+0 -9.6 Td
+(  InpDisable_AlphaSentinel = false) Tj
+0 -9.6 Td
+(  InpMinProfitFactor = 1.1) Tj
+0 -9.6 Td
+() Tj
+0 -9.6 Td
+([ AEGIS DYNAMIC RISK PROTOCOL \(ENHANCED\) ]) Tj
+0 -9.6 Td
+(  InpMax_Spread_Pips = 55) Tj
+0 -9.6 Td
+(  InpSlippage = 3) Tj
+0 -9.6 Td
+(  InpTQS_High_Conviction = 1.5) Tj
+0 -9.6 Td
+(  InpTQS_Medium_Conviction = 1) Tj
+0 -9.6 Td
+(  InpTQS_Low_Conviction = 0.5) Tj
+0 -9.6 Td
+(  InpMinTQSForEntry = 0.2) Tj
+0 -9.6 Td
+(  InpATR_Multiplier = 2.5) Tj
+0 -9.6 Td
+(  InpPSAR_Step = 0.02) Tj
+0 -9.6 Td
+(  InpPSAR_Max = 0.2) Tj
+0 -9.6 Td
+(  InpChandelier_Period = 22) Tj
+0 -9.6 Td
+(  InpChandelier_Multiplier = 3) Tj
+0 -9.6 Td
+(  InpEMA_Trail_Period = 10) Tj
+0 -9.6 Td
+() Tj
+0 -9.6 Td
+([ MARKET CONDITION FILTERS ]) Tj
+0 -9.6 Td
+(  InpEnableMarketFilters = true) Tj
+0 -9.6 Td
+() Tj
+0 -9.6 Td
+([ TIME FILTERS ]) Tj
+0 -9.6 Td
+(  InpEnableTimeFilter = false) Tj
+0 -9.6 Td
+(  InpTradeMonday = true) Tj
+0 -9.6 Td
+(  InpTradeTuesday = true) Tj
+0 -9.6 Td
+(  InpTradeWednesday = true) Tj
+0 -9.6 Td
+(  InpTradeThursday = true) Tj
+0 -9.6 Td
+(  InpTradeFriday = true) Tj
+0 -9.6 Td
+(  InpTradeSaturday = false) Tj
+0 -9.6 Td
+(  InpTradeSunday = false) Tj
+0 -9.6 Td
+(  InpTradingStartHour = 8) Tj
+0 -9.6 Td
+(  InpTradingEndHour = 18) Tj
+0 -9.6 Td
+() Tj
+0 -9.6 Td
+([ VISUALS & DASHBOARD ]) Tj
+0 -9.6 Td
+(  InpShow_Dashboard = true) Tj
+0 -9.6 Td
+(  InpDashboard_BG_Color = 28,28,38) Tj
+0 -9.6 Td
+(  InpDashboard_Text_Color = 210,210,220) Tj
+0 -9.6 Td
+(  InpColor_Positive = LimeGreen) Tj
+0 -9.6 Td
+(  InpColor_Negative = 255,80,100) Tj
+0 -9.6 Td
+(  InpColor_Neutral = Goldenrod) Tj
+0 -9.6 Td
+() Tj
+0 -9.6 Td
+([ BROKER REQUIREMENTS ]) Tj
+0 -9.6 Td
+(  InpMinStopDistancePoints = 30) Tj
+0 -9.6 Td
+() Tj
+0 -9.6 Td
+([ CERBERUS MODEL T: THE TITAN \(MTF MOMENTUM\) ]) Tj
+0 -9.6 Td
+(  InpTitan_Enabled = true) Tj
+0 -9.6 Td
+(  InpTitan_MagicNumber = 777008) Tj
+0 -9.6 Td
+(  InpTitan_D1_EMA = 50) Tj
+0 -9.6 Td
+(  InpTitan_H4_EMA = 34) Tj
+0 -9.6 Td
+() Tj
+0 -9.6 Td
+([ HUNTSMAN CAPITAL PRESERVATION ]) Tj
+0 -9.6 Td
+(  InpHuntsman_Enabled = true) Tj
+0 -9.6 Td
+(  InpHuntsman_PrimingBars = 50) Tj
+0 -9.6 Td
+(  InpHuntsman_Risk_Scale = 0.5) Tj
+0 -9.6 Td
+() Tj
+0 -9.6 Td
+([ CERBERUS MODEL W: THE WARDEN \(VOLATILITY SQUEEZE\) ]) Tj
+0 -9.6 Td
+(  InpWarden_Enabled = true) Tj
+0 -9.6 Td
+(  InpWarden_MagicNumber = 777009) Tj
+0 -9.6 Td
+(  InpWarden_BB_Period = 20) Tj
+0 -9.6 Td
+(  InpWarden_BB_Dev = 2) Tj
+0 -9.6 Td
+(  InpWarden_KC_Period = 20) Tj
+0 -9.6 Td
+(  InpWarden_KC_ATR_Mult = 1.5) Tj
+0 -9.6 Td
+(  InpWarden_Momentum_MA = 50) Tj
+ET
+Q
+
+endstream
+endobj
+11 0 obj
+<< /Length 4963 >>
+stream
+q
+1 0 0 1 36 806 cm
+/F1 8 Tf
+BT
+0 -9.6 Td
+() Tj
+0 -9.6 Td
+([ CERBERUS MODEL R: THE REAPER \(GRID/MARTINGALE\) ]) Tj
+0 -9.6 Td
+(  InpReaper_Enabled = true) Tj
+0 -9.6 Td
+(  InpReaper_BuyMagicNumber = 888001) Tj
+0 -9.6 Td
+(  InpReaper_SellMagicNumber = 888002) Tj
+0 -9.6 Td
+(  InpReaper_InitialLot = 0.01) Tj
+0 -9.6 Td
+(  InpReaper_LotMultiplier = 1.3) Tj
+0 -9.6 Td
+(  InpReaper_MaxLevels = 8) Tj
+0 -9.6 Td
+(  InpReaper_PipStep = 25) Tj
+0 -9.6 Td
+(  InpReaper_BasketTP = 50) Tj
+0 -9.6 Td
+(  InpReaper_Timeframe = 240) Tj
+0 -9.6 Td
+(  InpReaper_Header_Patch = ====== V27.1: REAPER INTELLIGENT GRID ======) Tj
+0 -9.6 Td
+(  InpReaper_HardcapLevels = 8) Tj
+0 -9.6 Td
+(  InpReaper_RegimeADX = 30) Tj
+0 -9.6 Td
+(  InpReaper_CooldownBars = 2) Tj
+0 -9.6 Td
+(  InpReaper_ATR_GridMult = 0.5) Tj
+0 -9.6 Td
+(  InpReaper_Header_Phoenix = ====== REAPER: PHOENIX BASKET TP ======) Tj
+0 -9.6 Td
+(  InpReaper_BasketTP_Money = 400) Tj
+0 -9.6 Td
+(  InpReaper_Header_Chimera = ====== REAPER: CHIMERA TRAILING DEFENSE ======) Tj
+0 -9.6 Td
+(  InpReaper_EnableTrail = true) Tj
+0 -9.6 Td
+(  InpReaper_TrailStart_Money = 150) Tj
+0 -9.6 Td
+(  InpReaper_TrailStop_Pips = 300) Tj
+0 -9.6 Td
+() Tj
+0 -9.6 Td
+([ REAPER: ALPHA SENTINEL ENTRY FILTER ]) Tj
+0 -9.6 Td
+(  InpReaper_EnableSentinel = true) Tj
+0 -9.6 Td
+(  InpSentinel_MaxADX = 25) Tj
+0 -9.6 Td
+(  InpSentinel_MTF_MAPeriod = 21) Tj
+0 -9.6 Td
+(  InpSentinel_MaxATR_Mult = 1.3) Tj
+0 -9.6 Td
+() Tj
+0 -9.6 Td
+([ REAPER: ELITE REVERSAL FILTER \(CHIMERA\) ]) Tj
+0 -9.6 Td
+(  InpReaper_EnableEliteFilter = true) Tj
+0 -9.6 Td
+() Tj
+0 -9.6 Td
+([ CERBERUS MODEL S: SILICON-X \(TRUE NORTH\) ]) Tj
+0 -9.6 Td
+(  InpSiliconX_Enabled = true) Tj
+0 -9.6 Td
+(  InpSX_InitialLot = 0.01) Tj
+0 -9.6 Td
+() Tj
+0 -9.6 Td
+(3. CLOSED TRADE LEDGER \(REALIZED P&L\)) Tj
+0 -9.6 Td
+(=====================================) Tj
+0 -9.6 Td
+() Tj
+0 -9.6 Td
+(    # | Date       | Dir  |   Size |      Price |        P&L) Tj
+0 -9.6 Td
+(------------------------------------------------------------) Tj
+0 -9.6 Td
+(    4 | 2020.01.31 | s/l  |   0.64 |    1.10509 |      10.60) Tj
+0 -9.6 Td
+(    5 | 2020.01.27 | s/l  |   1.29 |    1.10376 |    -104.49) Tj
+0 -9.6 Td
+(    6 | 2020.02.03 | s/l  |   1.26 |    1.10853 |     -94.50) Tj
+0 -9.6 Td
+(    7 | 2020.02.18 | t/p  |   1.25 |    1.08311 |     110.09) Tj
+0 -9.6 Td
+(    8 | 2020.02.27 | close |   0.01 |    1.09373 |       9.87) Tj
+0 -9.6 Td
+(   10 | 2020.02.27 | close |   0.02 |    1.09373 |      28.00) Tj
+0 -9.6 Td
+(   11 | 2020.02.24 | s/l  |   0.63 |    1.08241 |    -227.89) Tj
+0 -9.6 Td
+(   13 | 2020.03.02 | s/l  |   1.28 |    1.10599 |    -245.76) Tj
+0 -9.6 Td
+(   38 | 2020.09.01 | t/p  |   1.71 |    1.19896 |    1922.96) Tj
+0 -9.6 Td
+(   39 | 2020.09.07 | t/p  |   1.96 |    1.18400 |     113.68) Tj
+0 -9.6 Td
+(   40 | 2020.09.14 | t/p  |   1.98 |    1.18470 |     172.26) Tj
+0 -9.6 Td
+(   41 | 2020.09.21 | s/l  |   0.01 |    1.17745 |      -7.61) Tj
+0 -9.6 Td
+(   43 | 2020.09.28 | t/p  |   1.98 |    1.16310 |     132.66) Tj
+0 -9.6 Td
+(   44 | 2020.10.05 | s/l  |   2.00 |    1.17080 |    -144.00) Tj
+0 -9.6 Td
+(   45 | 2020.10.12 | s/l  |   1.98 |    1.17993 |    -397.98) Tj
+0 -9.6 Td
+(   46 | 2020.10.19 | t/p  |   1.92 |    1.17164 |      59.52) Tj
+0 -9.6 Td
+(   47 | 2020.10.26 | s/l  |   1.93 |    1.18481 |    -175.63) Tj
+0 -9.6 Td
+(   48 | 2020.11.09 | t/p  |   1.91 |    1.18759 |     217.74) Tj
+0 -9.6 Td
+(   74 | 2021.04.30 | close |   0.01 |    1.20397 |      -4.87) Tj
+0 -9.6 Td
+(   77 | 2021.04.20 | s/l  |   1.62 |    1.20496 |     348.74) Tj
+0 -9.6 Td
+(   78 | 2021.04.30 | close |   0.02 |    1.20397 |      -0.52) Tj
+0 -9.6 Td
+(   80 | 2021.04.30 | close |   0.04 |    1.20397 |      10.66) Tj
+0 -9.6 Td
+(   83 | 2021.04.30 | close |   0.06 |    1.20397 |      33.80) Tj
+0 -9.6 Td
+(   89 | 2021.06.16 | t/p  |   1.76 |    1.20581 |    1255.25) Tj
+0 -9.6 Td
+(   90 | 2021.06.15 | s/l  |   0.91 |    1.21436 |    -423.93) Tj
+0 -9.6 Td
+(   96 | 2021.07.01 | s/l  |   2.02 |    1.18826 |      16.73) Tj
+0 -9.6 Td
+(   97 | 2021.07.05 | t/p  |   2.02 |    1.18660 |     127.26) Tj
+0 -9.6 Td
+(   98 | 2021.07.12 | t/p  |   2.04 |    1.18789 |     108.12) Tj
+0 -9.6 Td
+(   99 | 2021.07.14 | s/l  |   0.41 |    1.17814 |      13.12) Tj
+0 -9.6 Td
+(  100 | 2021.08.02 | t/p  |   2.06 |    1.18742 |     164.80) Tj
+0 -9.6 Td
+(  101 | 2021.08.09 | t/p  |   2.08 |    1.17628 |      81.12) Tj
+0 -9.6 Td
+(  102 | 2021.08.23 | t/p  |   2.09 |    1.17007 |     186.01) Tj
+0 -9.6 Td
+(  103 | 2021.09.13 | t/p  |   2.11 |    1.18111 |      67.52) Tj
+0 -9.6 Td
+(  104 | 2021.09.13 | s/l  |   2.12 |    1.18178 |    -599.96) Tj
+0 -9.6 Td
+(  106 | 2021.09.20 | t/p  |   2.04 |    1.17084 |    1316.09) Tj
+0 -9.6 Td
+(  107 | 2021.09.27 | t/p  |   2.21 |    1.17211 |      97.24) Tj
+0 -9.6 Td
+(  108 | 2021.10.11 | t/p  |   2.23 |    1.15749 |     153.87) Tj
+0 -9.6 Td
+(  109 | 2021.10.25 | s/l  |   2.25 |    1.16164 |    -822.11) Tj
+0 -9.6 Td
+(  111 | 2021.10.28 | s/l  |   2.16 |    1.16284 |    -703.40) Tj
+ET
+Q
+
+endstream
+endobj
+12 0 obj
+<< /Length 6152 >>
+stream
+q
+1 0 0 1 36 806 cm
+/F1 8 Tf
+BT
+0 -9.6 Td
+(  113 | 2021.11.11 | close |   0.02 |    1.14757 |      19.43) Tj
+0 -9.6 Td
+(  115 | 2021.11.11 | close |   0.06 |    1.14757 |      39.93) Tj
+0 -9.6 Td
+(  116 | 2021.11.10 | s/l  |   0.09 |    1.15258 |       0.56) Tj
+0 -9.6 Td
+(  119 | 2021.11.10 | s/l  |   0.15 |    1.14958 |       0.00) Tj
+0 -9.6 Td
+(  123 | 2021.11.15 | close |   0.03 |    1.13978 |      11.46) Tj
+0 -9.6 Td
+(  125 | 2021.11.15 | close |   0.09 |    1.13978 |       7.20) Tj
+0 -9.6 Td
+(  126 | 2021.11.16 | close |   0.15 |    1.13396 |      77.11) Tj
+0 -9.6 Td
+(  127 | 2021.11.16 | s/l  |   0.03 |    1.13758 |       0.06) Tj
+0 -9.6 Td
+(  128 | 2021.11.15 | s/l  |   0.06 |    1.13683 |      -4.50) Tj
+0 -9.6 Td
+(  132 | 2021.11.17 | s/l  |   0.06 |    1.13008 |       0.00) Tj
+0 -9.6 Td
+(  133 | 2021.11.17 | s/l  |   0.10 |    1.12858 |       0.00) Tj
+0 -9.6 Td
+(  138 | 2022.01.12 | close |   0.06 |    1.14406 |    -122.79) Tj
+0 -9.6 Td
+(  140 | 2022.01.12 | close |   0.06 |    1.14406 |    -140.79) Tj
+0 -9.6 Td
+(  141 | 2022.01.28 | close |   0.10 |    1.11427 |      38.31) Tj
+0 -9.6 Td
+(  151 | 2022.01.12 | s/l  |   0.34 |    1.14538 |     -34.00) Tj
+0 -9.6 Td
+(  152 | 2022.01.17 | s/l  |   1.70 |    1.14066 |    -122.40) Tj
+0 -9.6 Td
+(  153 | 2022.01.24 | t/p  |   1.69 |    1.13437 |      76.05) Tj
+0 -9.6 Td
+(  154 | 2022.01.24 | s/l  |   1.70 |    1.13303 |    -584.80) Tj
+0 -9.6 Td
+(  157 | 2022.01.27 | s/l  |   0.07 |    1.11470 |      -7.84) Tj
+0 -9.6 Td
+(  159 | 2022.01.31 | t/p  |   1.63 |    1.11484 |      92.91) Tj
+0 -9.6 Td
+(  160 | 2022.02.07 | t/p  |   1.64 |    1.14520 |      86.92) Tj
+0 -9.6 Td
+(  161 | 2022.02.14 | t/p  |   1.65 |    1.13488 |     150.15) Tj
+0 -9.6 Td
+(  162 | 2022.02.21 | t/p  |   1.67 |    1.13240 |     123.58) Tj
+0 -9.6 Td
+(  164 | 2022.02.24 | t/p  |   1.69 |    1.11389 |    1671.41) Tj
+0 -9.6 Td
+(  166 | 2022.03.02 | s/l  |   0.05 |    1.10958 |      -2.40) Tj
+0 -9.6 Td
+(  167 | 2022.03.02 | close |   0.09 |    1.10734 |       2.16) Tj
+0 -9.6 Td
+(  168 | 2022.03.04 | close |   0.05 |    1.09912 |      35.21) Tj
+0 -9.6 Td
+(  169 | 2022.03.09 | close |   0.01 |    1.10867 |       1.30) Tj
+0 -9.6 Td
+(  171 | 2022.03.04 | close |   0.05 |    1.09912 |      19.80) Tj
+0 -9.6 Td
+(  172 | 2022.03.04 | s/l  |   0.09 |    1.10205 |      -4.23) Tj
+0 -9.6 Td
+(  175 | 2022.03.04 | close |   0.03 |    1.09301 |      12.21) Tj
+0 -9.6 Td
+(  179 | 2022.03.07 | close |   0.03 |    1.08450 |      19.80) Tj
+0 -9.6 Td
+(  181 | 2022.03.07 | s/l  |   0.09 |    1.08808 |       0.00) Tj
+0 -9.6 Td
+(  184 | 2022.03.07 | close |   0.24 |    1.08450 |      13.92) Tj
+0 -9.6 Td
+(  186 | 2022.03.09 | close |   0.03 |    1.10473 |     -67.83) Tj
+0 -9.6 Td
+(  187 | 2022.04.25 | close |   0.06 |    1.07584 |      29.56) Tj
+0 -9.6 Td
+(  189 | 2022.03.09 | close |   0.02 |    1.10867 |      34.60) Tj
+0 -9.6 Td
+(  190 | 2022.03.31 | s/l  |   1.99 |    1.11460 |     545.42) Tj
+0 -9.6 Td
+(  191 | 2022.04.04 | t/p  |   2.06 |    1.10457 |     206.00) Tj
+0 -9.6 Td
+(  193 | 2022.04.25 | close |   0.06 |    1.07584 |      11.56) Tj
+0 -9.6 Td
+(  195 | 2022.04.25 | close |   0.15 |    1.07156 |      45.30) Tj
+0 -9.6 Td
+(  196 | 2022.04.18 | t/p  |   2.09 |    1.08122 |     223.63) Tj
+0 -9.6 Td
+(  200 | 2022.04.25 | close |   0.06 |    1.07156 |       0.12) Tj
+0 -9.6 Td
+(  202 | 2022.04.26 | close |   0.04 |    1.06530 |      13.12) Tj
+0 -9.6 Td
+(  203 | 2022.04.26 | s/l  |   0.06 |    1.06745 |      -2.22) Tj
+0 -9.6 Td
+(  205 | 2022.04.27 | close |   0.11 |    1.06057 |      38.84) Tj
+0 -9.6 Td
+(  207 | 2022.04.27 | close |   0.06 |    1.06057 |       3.06) Tj
+0 -9.6 Td
+(  209 | 2022.04.27 | close |   0.04 |    1.05415 |      15.72) Tj
+0 -9.6 Td
+(  211 | 2022.04.27 | s/l  |   0.11 |    1.05571 |      -6.93) Tj
+0 -9.6 Td
+(  213 | 2022.04.28 | s/l  |   0.04 |    1.05208 |       0.25) Tj
+0 -9.6 Td
+(  214 | 2022.04.28 | close |   0.07 |    1.05031 |       1.89) Tj
+0 -9.6 Td
+(  216 | 2022.05.12 | s/l  |   0.04 |    1.04758 |       1.16) Tj
+0 -9.6 Td
+(  220 | 2022.05.12 | s/l  |   0.11 |    1.04543 |      -9.35) Tj
+0 -9.6 Td
+(  222 | 2022.05.16 | s/l  |   2.37 |    1.04407 |       9.81) Tj
+0 -9.6 Td
+(  223 | 2022.05.12 | close |   0.07 |    1.04039 |       8.33) Tj
+0 -9.6 Td
+(  225 | 2022.05.13 | s/l  |   0.04 |    1.03858 |       0.08) Tj
+0 -9.6 Td
+(  227 | 2022.05.12 | s/l  |   0.12 |    1.03661 |     -12.36) Tj
+0 -9.6 Td
+(  228 | 2022.07.05 | close |   0.20 |    1.02886 |     104.40) Tj
+0 -9.6 Td
+(  230 | 2022.06.13 | s/l  |   2.41 |    1.05032 |    -303.66) Tj
+0 -9.6 Td
+(  231 | 2022.06.20 | t/p  |   2.37 |    1.04962 |     459.78) Tj
+0 -9.6 Td
+(  232 | 2022.06.27 | t/p  |   2.43 |    1.05547 |     170.10) Tj
+0 -9.6 Td
+(  233 | 2022.07.04 | t/p  |   2.45 |    1.04271 |     254.80) Tj
+0 -9.6 Td
+(  235 | 2022.07.05 | s/l  |   0.07 |    1.03178 |      -4.90) Tj
+0 -9.6 Td
+(  239 | 2022.07.06 | close |   0.07 |    1.01775 |      72.45) Tj
+0 -9.6 Td
+(  241 | 2022.07.05 | s/l  |   0.07 |    1.02508 |       0.00) Tj
+0 -9.6 Td
+(  242 | 2022.07.05 | s/l  |   0.13 |    1.02470 |     -14.56) Tj
+0 -9.6 Td
+(  243 | 2022.07.06 | s/l  |   0.21 |    1.02326 |     -24.78) Tj
+0 -9.6 Td
+(  245 | 2022.07.06 | s/l  |   0.08 |    1.01983 |      -6.00) Tj
+0 -9.6 Td
+(  246 | 2022.07.06 | s/l  |   0.14 |    1.01864 |     -14.84) Tj
+0 -9.6 Td
+(  247 | 2022.07.08 | close |   0.14 |    1.01277 |      46.63) Tj
+0 -9.6 Td
+(  249 | 2022.07.08 | close |   0.09 |    1.01277 |       2.79) Tj
+0 -9.6 Td
+(  250 | 2022.07.08 | close |   0.14 |    1.00826 |      46.48) Tj
+0 -9.6 Td
+(  252 | 2022.07.08 | close |   0.09 |    1.00826 |       2.88) Tj
+0 -9.6 Td
+(  254 | 2022.07.11 | s/l  |   3.07 |    1.01494 |    -684.61) Tj
+0 -9.6 Td
+(  255 | 2022.07.12 | s/l  |   0.05 |    1.00558 |       0.10) Tj
+0 -9.6 Td
+(  256 | 2022.07.11 | s/l  |   0.08 |    1.00458 |      -4.00) Tj
+0 -9.6 Td
+(  257 | 2022.07.12 | close |   0.14 |    1.00092 |      23.24) Tj
+0 -9.6 Td
+(  260 | 2022.07.14 | s/l  |   0.05 |    0.99808 |       0.00) Tj
+0 -9.6 Td
+(  262 | 2022.08.23 | close |   0.14 |    0.99144 |      51.25) Tj
+0 -9.6 Td
+(  264 | 2022.07.18 | s/l  |   2.97 |    1.01648 |     950.40) Tj
+ET
+Q
+
+endstream
+endobj
+13 0 obj
+<< /Length 5016 >>
+stream
+q
+1 0 0 1 36 806 cm
+/F1 8 Tf
+BT
+0 -9.6 Td
+(  265 | 2022.08.01 | t/p  |   3.09 |    1.02261 |     509.85) Tj
+0 -9.6 Td
+(  266 | 2022.08.08 | s/l  |   3.16 |    1.01614 |    -372.88) Tj
+0 -9.6 Td
+(  267 | 2022.08.10 | s/l  |   0.62 |    1.03341 |     -62.00) Tj
+0 -9.6 Td
+(  269 | 2022.08.22 | s/l  |   3.21 |    1.00281 |    -282.48) Tj
+0 -9.6 Td
+(  271 | 2022.08.23 | close |   0.09 |    0.99144 |       5.76) Tj
+0 -9.6 Td
+(  272 | 2022.09.06 | s/l  |   0.15 |    0.99058 |       4.35) Tj
+0 -9.6 Td
+(  273 | 2022.09.06 | s/l  |   0.06 |    0.98908 |       0.12) Tj
+0 -9.6 Td
+(  274 | 2022.09.05 | s/l  |   3.27 |    0.98849 |   -1484.58) Tj
+0 -9.6 Td
+(  277 | 2022.09.19 | t/p  |   3.08 |    1.00141 |     237.16) Tj
+0 -9.6 Td
+(  278 | 2022.09.21 | s/l  |   3.12 |    0.99020 |       0.00) Tj
+0 -9.6 Td
+(  279 | 2022.09.21 | s/l  |   0.06 |    0.98458 |       0.00) Tj
+0 -9.6 Td
+(  281 | 2022.09.21 | s/l  |   0.16 |    0.98248 |     -14.40) Tj
+0 -9.6 Td
+(  282 | 2022.09.23 | close |   0.26 |    0.97776 |      60.32) Tj
+0 -9.6 Td
+(  285 | 2022.09.23 | close |   0.05 |    0.96862 |      34.80) Tj
+0 -9.6 Td
+(  290 | 2022.09.26 | close |   0.14 |    0.96230 |      81.21) Tj
+0 -9.6 Td
+(  293 | 2022.09.26 | close |   0.09 |    0.96230 |      25.02) Tj
+0 -9.6 Td
+(  295 | 2022.09.26 | close |   0.24 |    0.95703 |     121.20) Tj
+0 -9.6 Td
+(  296 | 2022.09.26 | s/l  |   0.05 |    0.96058 |       0.00) Tj
+0 -9.6 Td
+(  297 | 2022.09.26 | s/l  |   0.09 |    0.96027 |     -10.71) Tj
+0 -9.6 Td
+(  299 | 2022.10.26 | close |   0.09 |    1.00138 |    -402.11) Tj
+0 -9.6 Td
+(  302 | 2022.10.03 | t/p  |   3.20 |    0.97987 |     700.80) Tj
+0 -9.6 Td
+(  303 | 2022.10.10 | t/p  |   3.30 |    0.97395 |     204.60) Tj
+0 -9.6 Td
+(  304 | 2022.10.17 | t/p  |   3.32 |    0.97250 |     149.40) Tj
+0 -9.6 Td
+(  305 | 2022.10.31 | s/l  |   3.29 |    0.99400 |    -575.75) Tj
+0 -9.6 Td
+(  306 | 2022.11.14 | s/l  |   3.21 |    1.03188 |    -725.46) Tj
+0 -9.6 Td
+(  307 | 2022.11.28 | t/p  |   3.11 |    1.03933 |     771.28) Tj
+0 -9.6 Td
+(  308 | 2022.12.05 | t/p  |   3.21 |    1.05418 |     292.11) Tj
+0 -9.6 Td
+(  309 | 2022.12.12 | t/p  |   3.25 |    1.05349 |     169.00) Tj
+0 -9.6 Td
+(  315 | 2023.02.02 | s/l  |   1.68 |    1.10074 |     307.44) Tj
+0 -9.6 Td
+(  316 | 2023.02.06 | t/p  |   3.41 |    1.07940 |     405.79) Tj
+0 -9.6 Td
+(  317 | 2023.02.20 | t/p  |   3.47 |    1.06947 |     270.66) Tj
+0 -9.6 Td
+(  318 | 2023.03.06 | t/p  |   3.50 |    1.06339 |     315.00) Tj
+0 -9.6 Td
+(  319 | 2023.03.20 | t/p  |   3.54 |    1.06671 |     562.86) Tj
+0 -9.6 Td
+(  320 | 2023.03.27 | t/p  |   3.62 |    1.07612 |     340.28) Tj
+0 -9.6 Td
+(  321 | 2023.04.03 | s/l  |   3.66 |    1.08352 |    -245.22) Tj
+0 -9.6 Td
+(  322 | 2023.04.10 | t/p  |   3.63 |    1.09002 |     101.64) Tj
+0 -9.6 Td
+(  323 | 2023.04.17 | s/l  |   3.64 |    1.09796 |    -404.04) Tj
+0 -9.6 Td
+(  329 | 2023.05.31 | t/p  |   0.74 |    1.06837 |     162.80) Tj
+0 -9.6 Td
+(  330 | 2023.06.01 | s/l  |   1.85 |    1.07091 |    -904.26) Tj
+0 -9.6 Td
+(  337 | 2023.06.22 | s/l  |   0.71 |    1.09956 |     -71.00) Tj
+0 -9.6 Td
+() Tj
+0 -9.6 Td
+(4. RISK CONTROLLER ANALYSIS) Tj
+0 -9.6 Td
+(===========================) Tj
+0 -9.6 Td
+() Tj
+0 -9.6 Td
+(  Base Risk %:            0.5%) Tj
+0 -9.6 Td
+(  Base Risk % \(H1\):       0.25%) Tj
+0 -9.6 Td
+(  Defensive DD %:         15%) Tj
+0 -9.6 Td
+(  DD Risk Multiplier:     0.3) Tj
+0 -9.6 Td
+(  Max Open Trades:        12) Tj
+0 -9.6 Td
+(  Max Total Risk %:       5%) Tj
+0 -9.6 Td
+(  Compounding:           true) Tj
+0 -9.6 Td
+() Tj
+0 -9.6 Td
+(DYNAMIC STOPS \(Aegis\):) Tj
+0 -9.6 Td
+(  Max Spread:            55 pips) Tj
+0 -9.6 Td
+(  Slippage:              3 points) Tj
+0 -9.6 Td
+(  ATR Multiplier:        2.5) Tj
+0 -9.6 Td
+(  Chandelier:            P22x3) Tj
+0 -9.6 Td
+(  EMA Trail:             10) Tj
+0 -9.6 Td
+() Tj
+0 -9.6 Td
+(5. ANTI-PATTERN SCAN) Tj
+0 -9.6 Td
+(====================) Tj
+0 -9.6 Td
+() Tj
+0 -9.6 Td
+([WARN] Cooldown System DISABLED — allows rapid-fire entries during volatility) Tj
+0 -9.6 Td
+([WARN] Adaptive Selection OFF — static model allocation across regimes) Tj
+0 -9.6 Td
+([WARN] Reaper HardcapLevels=8 — deep grid exposure) Tj
+0 -9.6 Td
+([INFO] Reaper Condition Filter disabled) Tj
+0 -9.6 Td
+([!] Reaper LotMultiplier=1.3 aggressive — exponential risk escalation) Tj
+0 -9.6 Td
+() Tj
+0 -9.6 Td
+(6. RECOMMENDATIONS) Tj
+0 -9.6 Td
+(==================) Tj
+0 -9.6 Td
+() Tj
+0 -9.6 Td
+() Tj
+0 -9.6 Td
+(IMMEDIATE \(P0\):) Tj
+0 -9.6 Td
+( 1. Circuit Breaker Validation — does InpDefensiveDD_Percent=15% actually emergency-close?) Tj
+0 -9.6 Td
+(    Review log for 'AEGIS: Defensive Close' triggers \(likely absent at 39.57% DD\).) Tj
+0 -9.6 Td
+( 2. Reaper Grid Exponent — LotMultiplier=1.3 compounds rapidly. Run monte-carlo.) Tj
+0 -9.6 Td
+( 3. Mismatched Charts = 14 — verify no repainting indicators exist in //include files.) Tj
+0 -9.6 Td
+( 4. Floating Exposure — 316 open trades present massive gap risk. Verify margin buffer.) Tj
+0 -9.6 Td
+() Tj
+0 -9.6 Td
+(NEAR-TERM \(P1\):) Tj
+ET
+Q
+
+endstream
+endobj
+14 0 obj
+<< /Length 1431 >>
+stream
+q
+1 0 0 1 36 806 cm
+/F1 8 Tf
+BT
+0 -9.6 Td
+( 1. Time Filter — InpEnableTimeFilter=false permits weekend/holiday gap exposure.) Tj
+0 -9.6 Td
+(    Implement session isolation or reduce size during off-hours.) Tj
+0 -9.6 Td
+( 2. Profit Factor 1.44 — marginal for live capital. Focus on raising win rate or R:R.) Tj
+0 -9.6 Td
+( 3. Walk-Forward — split 2020-2022 train / 2022-2026 test for regime persistence.) Tj
+0 -9.6 Td
+() Tj
+0 -9.6 Td
+(ARCHITECTURAL:) Tj
+0 -9.6 Td
+( 1. De-couple model logic — each Cerberus model should track P&L attribution.) Tj
+0 -9.6 Td
+( 2. Implement dynamic ATR_stop instead of InpMR_BB_Dev fixed at 1.9.) Tj
+0 -9.6 Td
+( 3. Add position-aged-based risk decay \(older positions => reduced risk weight\).) Tj
+0 -9.6 Td
+() Tj
+0 -9.6 Td
+(7. TEST ENVIRONMENT METADATA) Tj
+0 -9.6 Td
+(============================) Tj
+0 -9.6 Td
+() Tj
+0 -9.6 Td
+(MT4 Version:              Build 1470) Tj
+0 -9.6 Td
+(Broker:                  XMGlobal-Real 26) Tj
+0 -9.6 Td
+(Symbol:                  EURUSD) Tj
+0 -9.6 Td
+(Period:                  2020.01.02 — 2026.04.27 \(6.3 years\)) Tj
+0 -9.6 Td
+(Mismatched Chart Errors: 14) Tj
+0 -9.6 Td
+(Modelling Quality:       90.00%) Tj
+0 -9.6 Td
+() Tj
+0 -9.6 Td
+(======================================================================) Tj
+0 -9.6 Td
+(END OF AUDIT — HERMES // MAX ARCHITECT) Tj
+0 -9.6 Td
+(======================================================================) Tj
+ET
+Q
+
+endstream
+endobj
+xref
+0 16
+0000000000 65535 f 
+0000000009 00000 n 
+0000000009 00000 n 
+0000000009 00000 n 
+0000000009 00000 n 
+0000000009 00000 n 
+0000000009 00000 n 
+0000000009 00000 n 
+0000000009 00000 n 
+0000000009 00000 n 
+0000000009 00000 n 
+0000000009 00000 n 
+0000000009 00000 n 
+0000000009 00000 n 
+0000000009 00000 n 
+0000000009 00000 n 
+trailer
+<< /Size 16 /Root 1 0 R >>
+startxref
+25869
+%%EOF
